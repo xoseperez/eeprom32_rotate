@@ -1,6 +1,6 @@
 /*
 
-EEPROM Rotate 0.1.1
+EEPROM32 Rotate 0.9.0
 
 EEPROM wrapper for ESP32 that handles partition rotation
 
