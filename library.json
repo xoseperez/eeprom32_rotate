@@ -1,7 +1,7 @@
 {
     "name": "EEPROM32_Rotate",
     "keywords": "eeprom,spi,flash",
-    "description": "EEPROM wrapper class for ESP32 that supports data rotate between multiple partitions",
+    "description": "EEPROM wrapper for ESP32 that handles partition rotation",
     "repository": {
         "type": "git",
         "url": "https://github.com/xoseperez/eeprom32_rotate.git"
