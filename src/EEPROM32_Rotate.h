@@ -2,7 +2,7 @@
 
 EEPROM Rotate 0.1.1
 
-EEPROM wrapper for ESP32
+EEPROM wrapper for ESP32 that handles partition rotation
 
 Copyright (C) 2018 by Xose Pérez <xose dot perez at gmail dot com>
 
@@ -21,21 +21,21 @@ along with the EEPROM32_Rotate library.  If not, see <http://www.gnu.org/license
 
 */
 
-#ifndef EEPROM32_Rotate_H
-#define EEPROM32_Rotate_H
+#ifndef EEPROM32_ROTATE_H
+#define EEPROM32_ROTATE_H
 
 #include <EEPROM.h>
 #include <Stream.h>
 #include <vector>
 
-#ifdef DEBUG_EEPROM32_Rotate_PORT
-#define DEBUG_EEPROM32_Rotate(...) DEBUG_EEPROM32_Rotate_PORT.printf( __VA_ARGS__ )
+#ifdef DEBUG_EEPROM32_ROTATE_PORT
+#define DEBUG_EEPROM32_ROTATE(...) DEBUG_EEPROM32_ROTATE_PORT.printf( __VA_ARGS__ )
 #else
-#define DEBUG_EEPROM32_Rotate(...)
+#define DEBUG_EEPROM32_ROTATE(...)
 #endif
 
-#define EEPROM32_Rotate_CRC_OFFSET        0   // 2 bytes long
-#define EEPROM32_Rotate_COUNTER_OFFSET    2   // 1 byte long
+#define EEPROM32_ROTATE_CRC_OFFSET        0   // 2 bytes long
+#define EEPROM32_ROTATE_COUNTER_OFFSET    2   // 1 byte long
 
 typedef struct {
     char * name;
@@ -78,4 +78,4 @@ class EEPROM32_Rotate: public EEPROMClass {
 
 };
 
-#endif // EEPROM32_Rotate_H
+#endif // EEPROM32_ROTATE_H

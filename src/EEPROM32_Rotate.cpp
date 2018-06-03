@@ -2,7 +2,7 @@
 
 EEPROM Rotate 0.1.1
 
-EEPROM wrapper for ESP32
+EEPROM wrapper for ESP32 that handles partition rotation
 
 Copyright (C) 2018 by Xose Pérez <xose dot perez at gmail dot com>
 
@@ -219,12 +219,12 @@ void EEPROM32_Rotate::begin(size_t size) {
         EEPROMClass::begin(size);
 
         // get partition value
-        uint8_t value = read(_offset + EEPROM32_Rotate_COUNTER_OFFSET);
-        DEBUG_EEPROM32_Rotate("Magic value for partition #%u is %u\n", index, value);
+        uint8_t value = read(_offset + EEPROM32_ROTATE_COUNTER_OFFSET);
+        DEBUG_EEPROM32_ROTATE("Magic value for partition #%u is %u\n", index, value);
 
         // validate content
         if (!_check_crc()) {
-            DEBUG_EEPROM32_Rotate("Partition #%u has not passed the CRC check\n", index);
+            DEBUG_EEPROM32_ROTATE("Partition #%u has not passed the CRC check\n", index);
             continue;
         }
 
@@ -265,8 +265,8 @@ void EEPROM32_Rotate::begin(size_t size) {
     EEPROMClass::begin(size);
     _partition_value = best_value;
 
-    DEBUG_EEPROM32_Rotate("Current partition is #%u (%s)\n", _partition_index, _name);
-    DEBUG_EEPROM32_Rotate("Current magic value is #%u\n", _partition_value);
+    DEBUG_EEPROM32_ROTATE("Current partition is #%u (%s)\n", _partition_index, _name);
+    DEBUG_EEPROM32_ROTATE("Current magic value is #%u\n", _partition_value);
 
 }
 
@@ -294,14 +294,14 @@ bool EEPROM32_Rotate::commit() {
     _mypart = _partitions[_partition_index].part;
     _partition_value++;
 
-    DEBUG_EEPROM32_Rotate("Writing to partition #%u (%s)\n", _partition_index, _name);
-    DEBUG_EEPROM32_Rotate("Writing magic value #%u\n", _partition_value);
+    DEBUG_EEPROM32_ROTATE("Writing to partition #%u (%s)\n", _partition_index, _name);
+    DEBUG_EEPROM32_ROTATE("Writing magic value #%u\n", _partition_value);
 
     // Update the counter & crc bytes
     uint16_t crc = _calculate_crc();
-    write(_offset + EEPROM32_Rotate_CRC_OFFSET, (crc >> 8) & 0xFF);
-    write(_offset + EEPROM32_Rotate_CRC_OFFSET + 1, crc & 0xFF);
-    write(_offset + EEPROM32_Rotate_COUNTER_OFFSET, _partition_value);
+    write(_offset + EEPROM32_ROTATE_CRC_OFFSET, (crc >> 8) & 0xFF);
+    write(_offset + EEPROM32_ROTATE_CRC_OFFSET + 1, crc & 0xFF);
+    write(_offset + EEPROM32_ROTATE_COUNTER_OFFSET, _partition_value);
 
     // Perform the commit
     bool ret = EEPROMClass::commit();
@@ -309,7 +309,7 @@ bool EEPROM32_Rotate::commit() {
     // If commit failed restore values
     if (!ret) {
 
-        DEBUG_EEPROM32_Rotate("Commit to partition #%u failed, restoring\n", _partition_index);
+        DEBUG_EEPROM32_ROTATE("Commit to partition #%u failed, restoring\n", _partition_index);
 
         // Restore values
         _partition_index = index_backup;
@@ -362,9 +362,9 @@ uint16_t EEPROM32_Rotate::_calculate_crc() {
 bool EEPROM32_Rotate::_check_crc() {
     uint16_t calculated = _calculate_crc();
     uint16_t stored =
-        (read(_offset + EEPROM32_Rotate_CRC_OFFSET) << 8) +
-        read(_offset + EEPROM32_Rotate_CRC_OFFSET + 1);
-    DEBUG_EEPROM32_Rotate("Calculated CRC: 0x%04X\n", calculated);
-    DEBUG_EEPROM32_Rotate("Stored CRC    : 0x%04X\n", stored);
+        (read(_offset + EEPROM32_ROTATE_CRC_OFFSET) << 8) +
+        read(_offset + EEPROM32_ROTATE_CRC_OFFSET + 1);
+    DEBUG_EEPROM32_ROTATE("Calculated CRC: 0x%04X\n", calculated);
+    DEBUG_EEPROM32_ROTATE("Stored CRC    : 0x%04X\n", stored);
     return (calculated == stored);
 }
