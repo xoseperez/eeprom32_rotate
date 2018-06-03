@@ -1,0 +1,12 @@
+# Precompiled Headers
+*.gch
+*.pch
+
+# PlatformIO folders
+.pio*
+
+# Documentation
+docs/*
+
+# Credentials
+credentials.h

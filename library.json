@@ -1,0 +1,25 @@
+{
+    "name": "EEPROM32_Rotate",
+    "keywords": "eeprom,spi,flash",
+    "description": "EEPROM wrapper class for ESP32 that supports data rotate between multiple sectors",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/xoseperez/EEPROM32_Rotate.git"
+    },
+    "version": "0.1.1",
+    "license": "LGPL-3.0",
+    "exclude": "tests",
+    "frameworks": "arduino",
+    "platforms": "espressif32",
+    "dependencies": [
+    ],
+    "authors": {
+        "name": "Xose Perez",
+        "email": "xose.perez@gmail.com",
+        "url": "http://tinkerman.cat",
+        "maintainer": true
+    },
+    "examples": [
+        "examples/*/*.ino"
+    ]
+}
