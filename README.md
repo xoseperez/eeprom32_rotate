@@ -5,8 +5,8 @@ This is a wrapper around the Arduino Core for ESP32 EEPROM library that handles 
 If you are using the ESP8266, visit the repository for the ESP8266 version of this library here: https://github.com/xoseperez/eeprom_rotate
 
 [![version](https://img.shields.io/badge/version-0.1.1-brightgreen.svg)](CHANGELOG.md)
-[![travis](https://travis-ci.org/xoseperez/EEPROM32_Rotate.svg?branch=master)](https://travis-ci.org/xoseperez/EEPROM32_Rotate)
-[![codacy](https://img.shields.io/codacy/grade/2f06a871848345368445ea1b74796f4c/master.svg)](https://www.codacy.com/app/xoseperez/EEPROM32_Rotate/dashboard)
+[![travis](https://travis-ci.org/xoseperez/eeprom32_rotate.svg?branch=master)](https://travis-ci.org/xoseperez/eeprom32_rotate)
+[![codacy](https://img.shields.io/codacy/grade/73a1774d4563493dbad4ebfaa55e0568/master.svg)](https://www.codacy.com/app/xoseperez/eeprom32_rotate/dashboard)
 [![license](https://img.shields.io/github/license/xoseperez/EEPROM32_Rotate.svg)](LICENSE)
 <br />
 [![donate](https://img.shields.io/badge/donate-PayPal-blue.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=xose%2eperez%40gmail%2ecom&lc=US&no_note=0&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHostedGuest)
