@@ -1,0 +1,43 @@
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+#######################################
+# Classes (KEYWORD1)
+#######################################
+
+EEPROM32_Rotate         KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+add_by_name             KEYWORD2
+add_by_subtype          KEYWORD2
+offset                  KEYWORD2
+size                    KEYWORD2
+begin                   KEYWORD2
+commit                  KEYWORD2
+name                    KEYWORD2
+current                 KEYWORD2
+dump                    KEYWORD2
+
+read                    KEYWORD2
+write                   KEYWORD2
+end                     KEYWORD2
+getDataPtr              KEYWORD2
+getConstDataPtr         KEYWORD2
+get                     KEYWORD2
+put                     KEYWORD2
+length                  KEYWORD2
+
+#######################################
+# Instances (KEYWORD2)
+#######################################
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+EEPROM_ROTATE_CRC_OFFSET        LITERAL1
+EEPROM_ROTATE_COUNTER_OFFSET    LITERAL1
