@@ -1,6 +1,6 @@
 /*
 
-EEPROM32 Rotate 0.9.0
+EEPROM32 Rotate 0.9.2
 
 EEPROM wrapper for ESP32 that handles partition rotation
 
@@ -239,15 +239,8 @@ void EEPROM32_Rotate::begin(size_t size) {
         } else {
 
             // This new partition is newer if...
-            bool newer = false;
-            uint8_t split = _partitions.size() - 1;
-            if ((value < split) && (split < best_value)) {
-                newer = true;
-            } else if ((best_value < split) && (split < value)) {
-                newer = false;
-            } else {
-                newer = value > best_value;
-            }
+            bool newer = ((value < best_value) and (best_value - value) > 128) or \
+                         ((value > best_value) and (value - best_value) < 128);
 
             if (newer) {
                 best_index = index;
