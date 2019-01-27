@@ -97,7 +97,7 @@ uint8_t EEPROM32_Rotate::add_by_subtype(uint8_t subtype) {
 
         count++;
 
-    } while (iterator = esp_partition_next(iterator));
+    } while ((iterator = esp_partition_next(iterator)));
 
     // Release the iterator
     esp_partition_iterator_release(iterator);
