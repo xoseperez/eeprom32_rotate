@@ -3,6 +3,10 @@
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.9.3] 2019-02-12
+### Fix
+- Fix missing parens to support ESP-IDF under gcc 5.2.0
+
 ## [0.9.2] 2018-12-09
 ### Fix
 - Fix magic number check around split (thanks to @arihantdaga and @mcspr)

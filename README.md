@@ -4,7 +4,7 @@ This is a wrapper around the Arduino Core for ESP32 EEPROM library that handles 
 
 If you are using the ESP8266, visit the repository for the ESP8266 version of this library here: https://github.com/xoseperez/eeprom_rotate
 
-[![version](https://img.shields.io/badge/version-0.9.2-brightgreen.svg)](CHANGELOG.md)
+[![version](https://img.shields.io/badge/version-0.9.3-brightgreen.svg)](CHANGELOG.md)
 [![travis](https://travis-ci.org/xoseperez/eeprom32_rotate.svg?branch=master)](https://travis-ci.org/xoseperez/eeprom32_rotate)
 [![codacy](https://img.shields.io/codacy/grade/73a1774d4563493dbad4ebfaa55e0568/master.svg)](https://www.codacy.com/app/xoseperez/eeprom32_rotate/dashboard)
 [![license](https://img.shields.io/github/license/xoseperez/EEPROM32_Rotate.svg)](LICENSE)
