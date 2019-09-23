@@ -4,7 +4,7 @@ This is a wrapper around the Arduino Core for ESP32 EEPROM library that handles 
 
 If you are using the ESP8266, visit the repository for the ESP8266 version of this library here: https://github.com/xoseperez/eeprom_rotate
 
-[![version](https://img.shields.io/badge/version-0.9.3-brightgreen.svg)](CHANGELOG.md)
+[![version](https://img.shields.io/badge/version-0.9.4-brightgreen.svg)](CHANGELOG.md)
 [![travis](https://travis-ci.org/xoseperez/eeprom32_rotate.svg?branch=master)](https://travis-ci.org/xoseperez/eeprom32_rotate)
 [![codacy](https://img.shields.io/codacy/grade/73a1774d4563493dbad4ebfaa55e0568/master.svg)](https://www.codacy.com/app/xoseperez/eeprom32_rotate/dashboard)
 [![license](https://img.shields.io/github/license/xoseperez/EEPROM32_Rotate.svg)](LICENSE)
@@ -19,6 +19,8 @@ Also, writing data to a NOR memory can be done byte by byte but only to change a
 A way to overcome this is to use more than one partition to store data and check on boot which one has the latest valid data.
 
 This is what this library does.
+
+**NOTICE**: Please note EEPROM emulation in the ESP32 is no longer maintained and only supported for backwards compatibility. Moreover, the latest 1.0.3 SDK version breaks this library. Therefore, this library will no longer be maintained either.
 
 ## How does it work?
 

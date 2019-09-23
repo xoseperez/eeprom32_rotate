@@ -27,6 +27,7 @@ along with the EEPROM32_Rotate library.  If not, see <http://www.gnu.org/license
 #include <EEPROM.h>
 #include <Stream.h>
 #include <vector>
+#include <esp_partition.h>
 
 #ifdef DEBUG_EEPROM32_ROTATE_PORT
 #define DEBUG_EEPROM32_ROTATE(...) DEBUG_EEPROM32_ROTATE_PORT.printf( __VA_ARGS__ )
