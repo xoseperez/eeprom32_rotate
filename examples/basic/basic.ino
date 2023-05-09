@@ -33,21 +33,55 @@ void setup() {
     // -------------------------------------------------------------------------
 
     uint8_t data;
-
+    uint8_t quantity;
+    quantity = 10;
     Serial.printf("Position 0: 0x%02X\n", EEPROMr.read(0));
     Serial.printf("Position 1: 0x%02X\n", EEPROMr.read(1));
     Serial.printf("Position 2: 0x%02X\n", EEPROMr.read(2));
-    Serial.printf("Data      : 0x%02X\n", data = EEPROMr.read(0));
+    Serial.printf("Position 5: 0x%02X\n", EEPROMr.read(5));
+    Serial.printf("Position 6: 0x%02X\n", EEPROMr.read(6));
+    Serial.printf("Data      : 0x%02X\n", data = EEPROMr.read(5));
 
     Serial.println();
-    Serial.printf("Writing 0x%02X to data\n", data + 1);
-    EEPROMr.write(0, data + 1);
+    Serial.printf("Writing 0x%02X to data\n", quantity);
+    //EEPROMr.write(0, data + 1);
+    EEPROMr.writeUShort(5, 10);
 
     Serial.println();
     Serial.printf("Commit %s\n", EEPROMr.commit() ? "OK" : "KO");
     Serial.printf("Position 0: 0x%02X\n", EEPROMr.read(0));
     Serial.printf("Position 1: 0x%02X\n", EEPROMr.read(1));
     Serial.printf("Position 2: 0x%02X\n", EEPROMr.read(2));
+    Serial.printf("Position 5: 0x%02X\n", EEPROMr.read(5));
+    Serial.printf("Position 6: 0x%02X\n", EEPROMr.read(6));
+    Serial.printf("Data      : 0x%02X\n", data = EEPROMr.read(5));
+
+    Serial.println("2ND TIME WRITING TO EEPROM");
+    quantity = quantity +5;
+
+    Serial.printf("Position 0: 0x%02X\n", EEPROMr.read(0));
+    Serial.printf("Position 1: 0x%02X\n", EEPROMr.read(1));
+    Serial.printf("Position 2: 0x%02X\n", EEPROMr.read(2));
+    Serial.printf("Position 5: 0x%02X\n", EEPROMr.read(5));
+    Serial.printf("Position 6: 0x%02X\n", EEPROMr.read(6));
+    Serial.printf("Data      : 0x%02X\n", data = EEPROMr.read(6));
+    
+    
+    Serial.printf("Data      : 0x%02X\n", data = EEPROMr.read(0));
+
+    Serial.println();
+    Serial.printf("Writing 0x%02X to data\n", quantity);
+    //EEPROMr.write(0, data + 1);
+    EEPROMr.writeUShort(6, quantity);
+
+    Serial.println();
+    Serial.printf("Commit %s\n", EEPROMr.commit() ? "OK" : "KO");
+    Serial.printf("Position 0: 0x%02X\n", EEPROMr.read(0));
+    Serial.printf("Position 1: 0x%02X\n", EEPROMr.read(1));
+    Serial.printf("Position 2: 0x%02X\n", EEPROMr.read(2));
+    Serial.printf("Position 5: 0x%02X\n", EEPROMr.read(5));
+    Serial.printf("Position 6: 0x%02X\n", EEPROMr.read(6));
+    Serial.printf("Data      : 0x%02X\n", data = EEPROMr.read(6));
     Serial.printf("Data      : 0x%02X\n", data = EEPROMr.read(0));
 
 }
