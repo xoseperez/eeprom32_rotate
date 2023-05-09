@@ -47,7 +47,6 @@ class EEPROM32_Rotate: public EEPROMClass {
 
     public:
 
-
         EEPROM32_Rotate(): EEPROMClass() {
             _user_defined_size = 0;
         };
@@ -70,6 +69,7 @@ class EEPROM32_Rotate: public EEPROMClass {
         std::vector<partition_t> _partitions;
 
         uint16_t _offset = 0;
+        uint16_t _user_defined_size = 0;
         uint8_t _partition_index = 0;
         uint8_t _partition_value = 0;
 
